@@ -1,0 +1,22 @@
+spring:
+  main:
+    allow-circular-references: true
+  application:
+    name: lab2
+  flyway:
+    baseline-on-migrate: true
+    enabled: false
+  datasource:
+    url: jdbc:postgresql://localhost:5432/service_db
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    open-in-view: false
+keycloak:
+  auth-server-url: http://localhost:8484/auth
+  realm: master
+  resource: auth
+  public-client: true

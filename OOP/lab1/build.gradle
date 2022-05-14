@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example.univ'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile "org.mockito:mockito-core:1.+"
+    implementation 'org.projectlombok:lombok:1.18.22'
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
+    implementation('org.postgresql:postgresql:42.2.10')
+    implementation group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+
+    compile('javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.1') {
+        transitive = false
+    }
+    compile('org.glassfish.web:javax.servlet.jsp.jstl:1.2.1') {
+        transitive = false
+    }
+
+    implementation group: 'org.apache.commons', name: 'commons-dbcp2', version: '2.6.0'
+
+
+    compile group: 'org.apache.tomcat', name: 'tomcat-jdbc', version: '7.0.19'
+
+}
+
+test {
+    useJUnitPlatform()
+}
