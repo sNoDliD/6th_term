@@ -6,3 +6,6 @@ out/
 gradlew
 gradlew.bat
 *.class
+
+node_modules/
+dist/
